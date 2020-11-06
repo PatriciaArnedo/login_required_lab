@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     end
   
     def create
-        #checks if user is logged in and redirects if not
+        #checks if params are nil or if user has entered params
         return redirect_to(controller: 'sessions',
                          action: 'new') if !params[:name] || params[:name].empty?
         #sets session name key to user enteres name value                 
